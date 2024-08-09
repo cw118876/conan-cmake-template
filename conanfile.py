@@ -1,6 +1,7 @@
 import os
 from conan import ConanFile
 from conan.tools.cmake import CMake, CMakeToolchain
+from conan.tools.files import copy
 
 class {{project}}Conan(ConanFile):
     name = "{{project}}"
@@ -15,6 +16,7 @@ class {{project}}Conan(ConanFile):
                "fPIC": {True, False}}
     default_options = {"shared": False, "fPIC": False}
     generators = "CMakeDeps"
+    package_type = "application"
     
     def configure(self):
         if self.options.shared:
@@ -50,6 +52,10 @@ class {{project}}Conan(ConanFile):
 
     def package(self):
         # copy("*.h", dst="include", src="include")
+        print(self.source_folder)
+        print(self.package_folder)
+        copy(self, "*", os.path.join(self.source_folder, "include"), 
+             os.path.join(self.package_folder, "include"))
         cmake = CMake(self)
         # package installation
         cmake.install()
