@@ -24,12 +24,11 @@ function do_build() {
     local build_dir=${source_dir}/build/${build_type}
     local install_dir=${source_dir}/install/${build_type}
     if [ ${build_custom} = 1 ]; then 
-       echo -e "build flag: ${build_custom_flag}"
        conan build . -of ${build_dir} -s build_type=${build_type} -pr:h=x64 -pr:b=x64 \
-         --build ${build_custom_flag}
+           --build=${build_custom_flag}
     else 
        conan build . -of ${build_dir} -s build_type=${build_type} -pr:h=x64 -pr:b=x64 \
-          --build missing
+           --build=missing
     fi
     echo -e "${GREEN}------------------------------------------${NC}"
     echo -e "${GREEN}build success${NC}"

@@ -1,4 +1,4 @@
-#include "{{project}}.hpp"
+#include "{{project}}/{{project}}.hpp"
 #include <iostream>
 
 int main(int argc, char *argv[]) {
