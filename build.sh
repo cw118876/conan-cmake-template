@@ -68,6 +68,7 @@ while getopts ":b:B:ce" opt; do
           ;;
         c)
           rm -rf build install
+          rm -rf compile_commands.json
           echo -e "${YELLOW}------------------------------------------${NC}"
           echo -e "${YELLOW}cleanup success${NC}"
           echo -e "${YELLOW}------------------------------------------${NC}"

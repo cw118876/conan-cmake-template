@@ -4,16 +4,14 @@ set(CMAKE_C_FLAGS "-O2 -Wall -Wformat -Wformat=2 -Wconversion -Wimplicit-fallthr
     -U_FORTIFY_SOURCE -D_FORTIFY_SOURCE=3 \
     -D_GLIBCXX_ASSERTIONS \
     -fstack-clash-protection -fstack-protector-strong \
-    -Wl,-z,nodlopen -Wl,-z,noexecstack \
-    -Wl,-z,relro -Wl,-z,now -fdiagnostics-color=always"
+    -fdiagnostics-color=always"
 )
 set(CMAKE_CXX_FLAGS "-O2 -Wall -Wformat -Wformat=2 -Wconversion -Wimplicit-fallthrough\
     -Werror=format-security \
     -U_FORTIFY_SOURCE -D_FORTIFY_SOURCE=3 \
     -D_GLIBCXX_ASSERTIONS \
     -fstack-clash-protection -fstack-protector-strong \
-    -Wl,-z,nodlopen -Wl,-z,noexecstack \
-    -Wl,-z,relro -Wl,-z,now -Wno-reorder -fdiagnostics-color=always"
+    -fdiagnostics-color=always"
 )
 
 
