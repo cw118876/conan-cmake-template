@@ -1,5 +1,5 @@
 
-set(target exec)
+set(target {{project}})
 
 add_executable(${target}
   {{project}}.cpp

@@ -1,5 +1,6 @@
 macro(get_all_targets_recursive targets dir)
     get_property(subdirectories DIRECTORY ${dir} PROPERTY SUBDIRECTORIES)
+
     foreach(subdir ${subdirectories})
         get_all_targets_recursive(${targets} ${subdir})
     endforeach()
