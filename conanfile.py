@@ -39,7 +39,7 @@ class {{project}}Conan(ConanFile):
 
 
     def requirements(self):
-        self.requires("gtest/1.15.0")
+        self.test_requires("gtest/1.15.0")
     
 
     def build(self):
@@ -62,5 +62,6 @@ class {{project}}Conan(ConanFile):
         
 
     def package_info(self):
-        self.cpp_info.libs = [{{project}}]
-        self.cpp_info.name["cmake_find_package"] = {{project}}
+        self.cpp_info.libs = ["{{project}}"]
+        self.cpp_info.name["cmake_find_package"] = "{{project}}"
+        self.cpp_info.names["cmake_find_package_multi"] = "{{project}}"
